@@ -1,5 +1,5 @@
 import React from 'react';
-import Caculator from './layout/Caculator/Caculator';
+import Caculator from './layout/Caculator';
 import './style/index.css';
 
 const App = () => (< div className='app' >

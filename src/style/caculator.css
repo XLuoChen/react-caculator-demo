@@ -26,9 +26,22 @@
 }
 
 .screen {
+  height: 200px;
   padding: 0 2rem;
   overflow: hidden;
   white-space: no-wrap;
   color: #ffffff;
   background-color: #CC3333;
+}
+
+.keypad__row {
+  height: 80px; /* (600px calculator - 200px screen) / 5 keypadRow components = 80px */
+  width: 100%;
+  display: flex; /* To control the dimension */
+  color: white;
+}
+
+.keypad {
+  height: 400px;
+  width: 100%;
 }
