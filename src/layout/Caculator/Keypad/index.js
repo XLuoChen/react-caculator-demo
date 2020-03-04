@@ -2,41 +2,28 @@ import React from 'react';
 import KeypadRow from './KeypadRow';
 import Button from '../../../components/Button';
 
-const keypad = () => (
+const charactersArray = [['C', '←', '%', '/'], [9, 8, 7, '*'], [6, 5, 4, '-'], [3, 2, 1, '+'], [0, '.', '=']];
+
+const generateKeyPadRows = (props) => charactersArray.map((row, index) => {
+  return (
+    <KeypadRow key={index}>
+      {
+        row.map(character => 
+        <Button
+          type={character === '=' ? 'large' : ''} 
+          onClick={props.onButtonPress}
+          key={character}
+        >
+          {character}
+        </Button>)
+      }
+    </KeypadRow>
+  )
+});
+
+const keypad = (props) => (
   <section className="keypad">
-    <KeypadRow>
-      <Button>C</Button>
-      <Button>&larr;</Button>
-      <Button>%</Button>
-      <Button>/</Button>
-    </KeypadRow>
-    
-    <KeypadRow>
-      <Button>9</Button>
-      <Button>8</Button>
-      <Button>7</Button>
-      <Button>*</Button>
-    </KeypadRow>
-    
-    <KeypadRow>
-      <Button>6</Button>
-      <Button>5</Button>
-      <Button>4</Button>
-      <Button>-</Button>
-    </KeypadRow>
-    
-    <KeypadRow>
-      <Button>3</Button>
-      <Button>2</Button>
-      <Button>1</Button>
-      <Button>+</Button>
-    </KeypadRow>
-    
-    <KeypadRow>
-      <Button>0</Button>
-      <Button>.</Button>
-      <Button type='large'>=</Button>
-    </KeypadRow>
+    {generateKeyPadRows(props)}
   </section>
 );
 

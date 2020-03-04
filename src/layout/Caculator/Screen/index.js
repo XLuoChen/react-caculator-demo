@@ -2,10 +2,10 @@ import React from 'react';
 import ResultScreen from './ResultScreen';
 import ComputationScreen from './ComputationScreen';
 
-const screen = () => (
+const screen = (props) => (
   <section className='screen'>
-    <ResultScreen />
-    <ComputationScreen />
+    <ResultScreen result={props.result} />
+    <ComputationScreen equation={props.equation} />
   </section>
 );
 
