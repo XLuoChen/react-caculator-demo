@@ -1,8 +1,8 @@
 import React from 'react';
 
-const keypadRow = () => (
+const keypadRow = (props) => (
   <div className="keypad__row">
-    row
+    {props.children}
   </div>
 );
 
